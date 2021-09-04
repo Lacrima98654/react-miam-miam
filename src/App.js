@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import './style/App.css';
 
 const Banner = () =>(
@@ -6,7 +6,7 @@ const Banner = () =>(
         <div className="container mb-auto">
             <header className="d-flex flex-wrap justify-content-center py-3 mb-4">
                 <a href="/" className="mb-3 mb-md-0 me-md-auto text-decoration-none">
-                    <span className="logo">Miam Miam</span>
+                    <span className="logo" style={{color:"yellow"}}>Miam Miam</span>
                 </a>
                 <ul className="nav nav-masthead">
                     <li className="nav-item">
@@ -53,6 +53,14 @@ const Acceuil = () => (
     </div>
 );
 
+const Card = (props) =>(
+    <div className="card mb-3 mb-lg-0" style={{width: "18rem",height:"18rem"}}>
+    <img src={require(`${props.src}`).default} className="card-img-top" alt={props.alt}/>
+    <div className="card-body">
+        <p className="card-text">{props.children}</p>
+    </div>
+</div>
+);
 
 const Menu = () =>(
     <React.Fragment>
@@ -64,9 +72,47 @@ const Menu = () =>(
                 et terminer votre exploration avec nos menus des desserts.
             </p>
             <h4>Menu du jour</h4>
+            <div className="pb-4 d-flex justify-content-center">
+            <Card src="./h.jpg" alt="Salade Charismatique">
+                Menu du jour:
+            </Card>
+            </div>   
             <h4>Menu statique</h4>
+                <div className="d-flex justify-content-md-between justify-content-center flex-wrap pb-4">
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                </div>
             <h4>Nos vins, boissons, cocktails et jus</h4>
+            <div className="d-flex justify-content-md-between justify-content-center flex-wrap pb-4">
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                </div>         
             <h4>Menu des desserts</h4>
+            <div className="d-flex justify-content-md-between justify-content-center flex-wrap pb-4">
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                    <Card src="./h.jpg" alt="Salade Charismatique">
+                        Menu du jour:
+                    </Card>
+                </div>
         </div>
     </React.Fragment>
 );
@@ -123,39 +169,46 @@ class Form extends React.Component{
             {[e.target.name]:e.target.value}
         )
     }
-    handleSubmit(){
-
+    handleSubmit(e){
+        e.preventDefault();
     }
     render(){
        return(
            <React.Fragment>
-               <form onSubmit={this.handleSubmit.bind(this)}>
-                   <p>
+               <form onSubmit={this.handleSubmit.bind(this)} className="w-50">
                        <div className="mb-3">
+                           <p>
                            <label htmlFor="name" className="form-label">Nom</label>
                            <input type="text" name="name" className="form-control" id="name"
                             value={this.state.name} onChange={this.handleChange.bind(this)}
                            />
+                           </p>
                        </div>
                        <div className="mb-3">
+                           <p>
                            <label htmlFor="mail" className="form-label">Adresse Email</label>
                            <input type="email" name="email" className="form-control" id="mail" placeholder="nom@exemple.com"
                            value={this.state.email} onChange={this.handleChange.bind(this)}
                            />
+                           </p>
                        </div>
                        <div className="mb-3">
+                           <p>
                            <label htmlFor="num" className="form-label">Numéro téléphoique</label>
                            <input type="tel" name="tel" className="form-control" id="num"
                            value={this.state.tel} onChange={this.handleChange.bind(this)}
                            />
+                           </p>
                        </div>
                        <div className="pb-3">
-                           <label htmlFor="msg" className="form-label">Laissez votre message...</label>
-                           <textarea name="msg" className="form-control" id="msg" rows="5"
-                           value={this.state.msg} onChange={this.handleChange.bind(this)}
-                           />
+                           <p>
+                                <label htmlFor="msg" className="form-label">Laissez votre message...</label>
+                                <textarea name="msg" className="form-control" id="msg" rows="5"
+                                value={this.state.msg} onChange={this.handleChange.bind(this)}
+                                />
+                           </p>
                        </div>
-                   </p>
+                       <button type="submit" className="btn btn-primary">Send</button>
                </form>
 
            </React.Fragment>
@@ -182,11 +235,12 @@ const Contact = () =>(
 const Shop = () =>(
     <React.Fragment>
         <div id="shop" className="container">
-            <h3>Commandes et Réservation</h3>
+            <h2 style={{color:"yellow"}}>Commandes et Réservation</h2>
             <p className="lead">
                 Pour toutes vos commandes et réservation vous êtes au bon endroits.
                 Une fois le formulaire ci dessous rempli, notre équipe de 
-                communication vous donnera une aussitôt dans les 15minutes qui suivront.
+                communication vous donnera une suite dans les 15 à 30minutes qui suivront.
+                Toute réservation doit être  fait 24h à l'avance.Merci😊.
             </p>
         </div>
     </React.Fragment>
@@ -195,15 +249,13 @@ const Shop = () =>(
 const Footer = () => (
     <React.Fragment>
         <footer className="container">
-            <p>
+            <p className="lead">
                 Site Web réalisé avec Bootstrap et React JS par <a href="tel:+22991985934">Roméo KAKPO</a>.
             </p>
+            <a href={"#"}>Retourner en haut de la page.</a>
         </footer>
     </React.Fragment>
 );
-
-
-
 
 //===================================//
 function App(){
