@@ -2,9 +2,7 @@
   font-family: 'Pinyon Script';
   src: url("./fonts/PinyonScript-Regular.ttf") format('truetype');
 }
-*{
-  margin: 0;
-}
+
 .home{
   background: url("bg.jpg") no-repeat;
   background-size: cover;
@@ -21,19 +19,20 @@ main{
 }
 .cover-container {
   max-width: 42em;
-
 }
 
 .body{
   color: rgba(255, 255, 255, 0.81);
   background-color: rgba(16, 18, 20, 0.92);
 }
+
 .logo{
   font-family: 'Pinyon Script', cursive;
   font-size: 2.5rem;
   font-weight: 700;
   color:white;
 }
+
 ul{
   font-size: 2em;
 }
@@ -67,6 +66,7 @@ ul{
   font-size: 2rem;
   text-align: center;
 }
+
 .description{
   font-size: 4rem;
   font-family: 'Pinyon Script', cursive;
@@ -74,9 +74,12 @@ ul{
 
 #contact, #about{
   background-color: transparent;
-
 }
 
-h4{
+h4,h3{
   color: yellow;
+}
+input[type="text"],input[type="email"],
+input[type="tel"], textarea.form-control {
+  background-color : #d1d1d1; 
 }
