@@ -2,7 +2,7 @@ import React  from "react";
 
 const Banner = () =>(
     <React.Fragment>
-        <div className="container mb-auto">
+        <div className="container mb-auto nav-div">
             <header className="d-flex flex-wrap justify-content-center py-3 mb-4">
                 <a href="/" className="mb-3 mb-md-0 me-md-auto text-decoration-none">
                     <span className="logo" style={{color:"yellow"}}>Miam Miam</span>

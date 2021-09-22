@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => (
     <React.Fragment>
@@ -6,7 +6,6 @@ const Footer = () => (
             <p className="lead">
                 Site Web réalisé avec Bootstrap et React JS par <a href="tel:+22991985934">Roméo KAKPO</a>.
             </p>
-            <a href={"/"}>Retourner en haut de la page.</a>
         </footer>
     </React.Fragment>
 );

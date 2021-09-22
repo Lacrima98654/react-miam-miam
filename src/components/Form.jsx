@@ -28,7 +28,7 @@ class Form extends React.Component{
     render(){
        return(
            <React.Fragment>
-               <form onSubmit={this.handleSubmit.bind(this)} className="w-50 mb-3">
+               <form onSubmit={this.handleSubmit.bind(this)} className="w-50 mb-3 contact">
                        <div className="mb-3">
                            <p>
                            <label htmlFor="name" className="form-label">Nom</label>
@@ -61,7 +61,7 @@ class Form extends React.Component{
                                 />
                            </p>
                        </div>
-                       <button type="submit" className="btn btn-primary w-100">Send</button>
+                       <button type="submit" className="btn btn-submit w-100">Send</button>
                </form>
 
            </React.Fragment>

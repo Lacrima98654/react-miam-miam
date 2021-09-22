@@ -103,3 +103,31 @@ footer a,#about a{
 .card-text{
   color: rgba(16, 18, 20, 0.92);
 }
+
+.scrollTop{
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  z-index: 10;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  color: yellow;
+}
+
+button.btn-submit{
+  background-color: transparent;
+  border-color: yellow;
+  color: yellow;
+}
+button.btn-submit:hover{
+  border-color: white;
+  color: white;
+}
+
+/*Media Queries*/
+@media screen and (max-width:411px) {
+  form.contact{
+    width: 100%!important;;
+  }
+}
